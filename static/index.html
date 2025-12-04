@@ -1,95 +1,98 @@
 <!doctype html>
 <html lang="en" dir="ltr">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Verification Portal — Ministry of Media</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Verification Portal — Ministry of Media</title>
 
-  <!-- Cairo font (Arabic-friendly but works for English too) -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Cairo font (Arabic-friendly but works for English too) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="header-inner container">
-      <div class="brand" aria-label="ministry logo">
-        <!-- Put your logo file as logo.png in static/ -->
-        <img src="/static/logo.png" alt="Ministry Logo" class="logo">
-        <div>
-          <h1>Ministry of Media</h1>
-          <div class="small-muted">Verification Portal</div>
+    <header class="site-header">
+        <div class="header-inner container">
+            <div class="brand" aria-label="ministry logo">
+                <!-- Put your logo file as logo.png in static/ -->
+                <img src="/static/logo.png" alt="Ministry Logo" class="logo">
+                <div>
+                    <h1>Ministry of Media</h1>
+                    <div class="small-muted">Verification Portal</div>
+                </div>
+            </div>
+
+            <!-- navigation intentionally removed -->
         </div>
-      </div>
+    </header>
 
-      <!-- navigation intentionally removed -->
-    </div>
-  </header>
+    <main class="container">
+        <div class="layout">
+            <!-- MAIN COLUMN -->
+            <div>
+                <section class="card hero" aria-labelledby="hero-title">
+                    <div class="hero-copy">
+                        <h2 id="hero-title">Quick News Verification</h2>
+                        <p>Enter the news text below to receive an automated verification result.</p>
 
-  <main class="container">
-    <div class="layout">
-      <!-- MAIN COLUMN -->
-      <div>
-        <section class="card hero" aria-labelledby="hero-title">
-          <div class="hero-copy">
-            <h2 id="hero-title">Quick News Verification</h2>
-            <p>Enter the news text below to receive an automated verification result.</p>
+                        <div style="margin-top:12px">
+                            <textarea id="newsText" rows="6" placeholder="Enter the news text here..."></textarea>
+                        </div>
 
-            <div style="margin-top:12px">
-              <textarea id="newsText" rows="6" placeholder="Enter the news text here..."></textarea>
+                        <div class="controls" style="margin-top:12px">
+                            <button class="btn" id="predictBtn">Predict</button>
+                            <button class="btn secondary" id="clearBtn">Clear</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card results" aria-live="polite" style="margin-top:18px">
+                    <div class="results-header">
+                        <h3 style="margin:0">Results</h3>
+                    </div>
+
+                    <div id="resultsContainer" class="cards">
+                        <div class="empty">No results yet — click "Predict".</div>
+                    </div>
+                </section>
             </div>
 
-            <div class="controls" style="margin-top:12px">
-              <button class="btn" id="predictBtn">Predict</button>
-              <button class="btn secondary" id="clearBtn">Clear</button>
-            </div>
-          </div>
-        </section>
+            <!-- ASIDE -->
+            <aside class="main-aside">
+                <div class="aside-section">
+                    <div class="card">
+                        <h3>Critical Cases</h3>
+                        <div id="criticalContainer" class="small-muted" style="margin-top:10px">No data available.</div>
+                        <div style="margin-top:12px">
+                            <button class="btn" id="criticalBtn">Show Critical Cases</button>
+                        </div>
+                    </div>
 
-        <section class="card results" aria-live="polite" style="margin-top:18px">
-          <div class="results-header">
-            <h3 style="margin:0">Results</h3>
-          </div>
-
-          <div id="resultsContainer" class="cards">
-            <div class="empty">No results yet — click "Predict".</div>
-          </div>
-        </section>
-      </div>
-
-      <!-- ASIDE -->
-      <aside class="main-aside">
-        <div class="aside-section">
-          <div class="card">
-            <h3>Critical Cases</h3>
-            <div id="criticalContainer" class="small-muted" style="margin-top:10px">No data available.</div>
-            <div style="margin-top:12px">
-              <button class="btn" id="criticalBtn">Show Critical Cases</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Monthly Report</h3>
-            <div id="monthlyContainer" class="small-muted" style="margin-top:10px">No data available.</div>
-            <div style="margin-top:12px">
-              <button class="btn" id="monthlyBtn">Show Monthly Report</button>
-            </div>
-          </div>
+                    <div class="card">
+                        <h3>Monthly Report</h3>
+                        <div id="monthlyContainer" class="small-muted" style="margin-top:10px">No data available.</div>
+                        <div style="margin-top:12px">
+                            <button class="btn" id="monthlyBtn">Show Monthly Report</button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
         </div>
-      </aside>
-    </div>
-  </main>
+    </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-inner container">
-      <div class="footer-center">
-        <img src="/static/footer_logo.png" alt="Footer Logo" class="footer-logo">
-        <!-- remove or edit the follow text below if you don't want it -->
-        <div class="footer-follow">Follow us: Twitter • Instagram • YouTube</div>
-      </div>
-    </div>
-  </footer>
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner container">
+            <div class="footer-center">
+                <img src="/static/footer_logo.png" alt="Footer Logo" class="footer-logo">
+                <!-- remove or edit the follow text below if you don't want it -->
+                <div class="footer-follow">Follow us: Twitter • Instagram • YouTube</div>
+            </div>
+        </div>
+    </footer>
 
-  <script src="/static/script.js"></script>
+    <script src="/static/script.js"></script>
 </body>
+
 </html>

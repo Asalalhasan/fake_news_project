@@ -89,15 +89,13 @@ async def get_critical_cases():
                 s = line.strip()
                 if not s:
                     continue
-
-                # جرّبي تحميل سطر واحد كـ JSON مباشر
                 try:
                     cases.append(json.loads(s))
                     continue
                 except json.JSONDecodeError:
                     pass
 
-                # لو السطر يحوي أكثر من JSON → نفكّهم
+                
                 idx = 0
                 length = len(s)
                 while idx < length:
@@ -106,7 +104,7 @@ async def get_critical_cases():
                         cases.append(obj)
                         idx = end
                     except json.JSONDecodeError:
-                        break  # تجاهل الباقي السيء
+                        break 
     except FileNotFoundError:
         return {"cases": []}
 

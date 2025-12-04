@@ -18,7 +18,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -284,8 +285,8 @@ section.card.results {
 }
 
 /* small safety: remove accidental extra spacers */
-body > .spacer,
-body > .extra-space {
+body>.spacer,
+body>.extra-space {
     display: none;
 }
 

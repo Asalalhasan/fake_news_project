@@ -1,0 +1,344 @@
+:root {
+    --green: #0b9973;
+    --green-dark: #096b52;
+    --muted: #6b7a7a;
+    --bg: #f5f8f7;
+    --card: #ffffff;
+
+    /* footer exact color you provided */
+    --footer: #01111A;
+
+    --accent: #00b07a;
+    --maxw: 1800px;
+    font-family: "Cairo", system-ui, sans-serif;
+}
+
+/* global reset */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: #0b1b1b;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Single container definition */
+.container {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 18px 18px 12px;
+}
+
+/* HEADER */
+.site-header {
+    background: #fff;
+    border-bottom: 1px solid #e6efec;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 18px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    height: 68px;
+    width: auto;
+    border-radius: 6px;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--green-dark);
+}
+
+.small-muted {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* MAIN LAYOUT */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 18px;
+    align-items: start;
+}
+
+/* responsive switch to single column */
+@media (max-width: 980px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ASIDE */
+.main-aside {
+    align-self: start;
+    /* keep aside aligned to top; no negative margins/transforms */
+    margin: 0;
+    padding: 0;
+}
+
+.aside-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+}
+
+/* make aside cards compact and consistent */
+.aside-section .card {
+    padding: 14px;
+    border-radius: 12px;
+    margin: 0;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* CARDS: use full width within their grid cell and bounded max-width */
+.card {
+    width: 100%;
+    max-width: 100%;
+    min-height: 220px;
+    padding: 20px;
+    border-radius: 16px;
+    background: var(--card);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+}
+
+/* For aside (right column) card specifics: keep them slightly smaller */
+.main-aside .card {
+    max-width: 100%;
+    padding: 18px;
+    min-height: 120px;
+    border-radius: 12px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Controls and inputs */
+.controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #e6efec;
+    font-size: 15px;
+    background: #fff;
+    resize: vertical;
+    min-height: 130px;
+    line-height: 1.4;
+}
+
+/* BUTTONS */
+.btn {
+    background: var(--green);
+    color: #fff;
+    border: none;
+    padding: 11px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.btn.secondary {
+    background: #fff;
+    color: var(--green);
+    border: 1px solid #e6efec;
+}
+
+/* RESULTS */
+.results-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+}
+
+.result-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px solid #e6f3ef;
+    box-shadow: 0 6px 14px rgba(11, 153, 115, 0.04);
+}
+
+.result-card h4 {
+    margin: 0 0 8px;
+    color: var(--green-dark);
+    font-size: 16px;
+}
+
+.result-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.empty {
+    padding: 18px;
+    border: 1px dashed #e6f3ee;
+    border-radius: 10px;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* reduce space between hero and results for better balance */
+section.card.results {
+    margin-top: 14px;
+}
+
+/* FOOTER — final version */
+.site-footer {
+    background: var(--footer);
+    color: #cfe9e6;
+    padding: 28px 0;
+    margin-top: 0;
+    flex-shrink: 0;
+}
+
+/* centered column layout */
+.footer-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* BIG clean footer logo */
+.footer-logo {
+    height: 140px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 4px 0 0 0;
+}
+
+/* REMOVE ONLY FOOTER EXTRA TEXT/LINKS (keep header small-muted visible) */
+.footer-links,
+.footer-follow,
+.copyright {
+    display: none !important;
+}
+
+/* small safety: remove accidental extra spacers */
+body > .spacer,
+body > .extra-space {
+    display: none;
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 980px) {
+    :root {
+        --maxw: 920px;
+    }
+
+    .footer-logo {
+        height: 110px;
+    }
+
+    /* stack layout: main content first, aside second (same as before but cleaner) */
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .main-aside {
+        order: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --maxw: 720px;
+    }
+
+    .logo {
+        height: 52px;
+    }
+
+    .footer-inner {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .footer-logo {
+        height: 90px;
+    }
+
+    /* make cards more compact on very small screens */
+    .card {
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    textarea {
+        min-height: 110px;
+        font-size: 14px;
+    }
+
+    .controls {
+        gap: 8px;
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "timestamp": "2025-12-04T21:14:08.469282",
+    "fake_real_ratio": {
+        "fake": 6,
+        "real": 43,
+        "fake_real_ratio": 0.13953488372093023
+    },
+    "average_confidence": 0.7628381423069016,
+    "average_latency_total": 0.003017221178327288,
+    "average_latency_inference": 0.002972729352055764,
+    "average_latency_server": 4.4491826271524235e-05,
+    "model_drift": 0.13953488372093023,
+    "error_analysis": {
+        "low_confidence_cases": 17,
+        "high_latency_cases": 0
+    },
+    "server_health": {
+        "total_predictions": 49
+    },
+    "anomalies": []
+}

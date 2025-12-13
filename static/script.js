@@ -1,11 +1,3 @@
-// static/script.js
-// Updated display script per your requests:
-// - Show only the clean, readable summary for Prediction, Critical Cases and Monthly Report.
-// - REMOVE the raw JSON blocks (no raw JSON shown).
-// - Prediction: show Prediction, Confidence (decimal), Fake/Real numbers, latencies, timestamp.
-// - Critical Cases: bold title, normal result, include timestamp and details.
-// - Monthly Report: show all important fields (fake_real_ratio, averages, latencies, model_drift, totals, anomalies, server_health, etc.) in readable format.
-// Save/replace this file at static/script.js and hard-reload the page (Ctrl/Cmd+Shift+R).
 
 /* DOM nodes */
 const predictBtn = document.getElementById('predictBtn');
